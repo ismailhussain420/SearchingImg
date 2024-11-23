@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCHING IMAGE</title>
+</head>
+<style>
+*{
+    margin:0px;
+    padding:0px;
+}
+img{
+    width:300px;
+    height:300px
+}
+h1{
+    padding: 15px;
+    margin-top: 14px;
+    text-shadow: 1px 7px 10px gray;
+    font-size: 44px;
+    text-align: center;
+}
+.image{
+    margin-left:100px;
+    box-sizing: border-box;
+    float: left;
+}
+.image h3{
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:10px
+
+}
+input{
+    width: 29%;
+    padding: 7px;
+    margin-bottom: 23px;
+    text-align: center;
+   
+    border: 2px solid black;
+    box-shadow: 10px;
+    border-radius: 10px;
+    margin-left: 34%;
+    margin-top: 2%;
+}
+input:hover{
+    background-color: black;
+    color:#fff;
+    transition: 1s;
+    
+
+}
+.container{
+    margin-top: 29px;
+    margin-left: 6%;
+}
+
+</style>
+<body>
+    <h1>JS Image Searching</h1>
+    <input type="text" placeholder="search item name" oninput ="myfunc()" id="search">
+   <div class="container">
+    <div class="image" data-title="frog">
+        <img src="lf1.jpg" alt="">
+        <h3>Frog</h3>
+    </div>
+
+
+    <div class="image" data-title="sea">
+        <img src="lf2.jpg" alt="">
+        <h3>sea</h3>
+    </div>
+
+
+    <div class="image" data-title="car">
+        <img src="hb1.jpg" alt="">
+        <h3>Car</h3>
+    </div>
+
+
+    <div class="image" data-title="book">
+        <img src="hb2.jpg" alt="">
+        <h3>Book</h3>
+    </div>
+
+
+    <div class="image" data-title="skitting">
+        <img src="ad1.jpg" alt="">
+        <h3> Skitting</h3>
+    </div>
+
+
+    <div class="image" data-title="diving">
+        <img src="ad2.jpg" alt="">
+        <h3> Diving</h3>
+    </div>
+
+
+
+
+
+   </div>
+   <script>
+    function myfunc(){
+        var search = document.getElementById("search");
+        var image = document.querySelectorAll(".image");
+
+        for(var i =0 ; i  < image.length; i++){
+            image[i].style.display="none";
+        }
+
+        for(var j = 0; j<image.length ; j++){
+            var title = image[j].getAttribute("data-title");
+            if(search.value == title){
+            image[j].style.display="block";
+
+            }else if(search.value == ''){
+            image[j].style.display="block";
+
+
+            }else{
+            image[j].style.display="none";
+
+            }
+        }
+
+
+
+
+    }
+
+   </script>
+</body>
+</html>
